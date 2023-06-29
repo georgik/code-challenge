@@ -1,0 +1,7 @@
+{
+    "title": "Challenge 5: Buzzer",
+    "description": "Make the buzzer play a melody.",
+    "codeSolution": "import time\nfrom machine import Pin, PWM\n\nbuzzer = PWM(Pin(5))\nbuzzer.freq(1000)\n\nnotes = [262, 294, 330, 349, 392, 440, 494, 523]\n\nfor note in notes:\n    buzzer.duty(512)\n    buzzer.freq(note)\n    time.sleep(0.5)\n\nbuzzer.duty(0)\n",
+    "codeChallenge": "import time\nfrom machine import Pin, PWM\n\nbuzzer = PWM(Pin(5))\nbuzzer.freq(1000)\n\n# TODO: Replace this loop with the code to play a melody using the buzzer\nwhile True:\n    pass\n"
+  }
+  

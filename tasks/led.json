@@ -1,0 +1,7 @@
+{
+  "title": "Challenge 1: LED",
+  "description": "Write the code to blink an LED:",
+  "codeSolution": "import machine\n\nled_pin = machine.Pin(5, machine.Pin.OUT)  # Replace '5' with the appropriate GPIO pin number\n\nwhile True:\n    led_pin.value(1)\n    machine.sleep_ms(500)\n    led_pin.value(0)\n    machine.sleep_ms(500)\n",
+  "codeChallenge": "import machine\n\nled_pin = machine.Pin(5, machine.Pin.OUT)  # Replace '5' with the appropriate GPIO pin number\n\nwhile True:\n    # TODO: Replace this line with the code to turn off the LED\n    machine.sleep_ms(500)\n"
+}
+

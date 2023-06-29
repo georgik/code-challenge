@@ -1,0 +1,7 @@
+{
+    "title": "Challenge 10: Photoresistor Sensor",
+    "description": "Read the value from a photoresistor sensor.",
+    "codeSolution": "import machine\nimport time\n\nadc = machine.ADC(0)\n\nwhile True:\n    light_value = adc.read()\n    print('Light value:', light_value)\n    time.sleep(1)\n",
+    "codeChallenge": "import machine\nimport time\n\nadc = machine.ADC(0)\n\nwhile True:\n    # TODO: Replace this line with the code to read the value from the photoresistor sensor and print it\n    print('Light value is unknown')\n    time.sleep(1)\n"
+  }
+  

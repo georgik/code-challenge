@@ -1,0 +1,7 @@
+{
+    "title": "Challenge 7: Ultrasonic Distance Sensor",
+    "description": "Measure the distance using an ultrasonic sensor.",
+    "codeSolution": "import machine\nimport time\n\ntrigger = machine.Pin(5, machine.Pin.OUT)\necho = machine.Pin(4, machine.Pin.IN)\n\nwhile True:\n    trigger.on()\n    time.sleep_us(10)\n    trigger.off()\n\n    while echo.value() == 0:\n        pass\n    pulse_start = time.ticks_us()\n\n    while echo.value() == 1:\n        pass\n    pulse_end = time.ticks_us()\n\n    pulse_duration = pulse_end - pulse_start\n    distance = pulse_duration / 58\n\n    print('Distance:', distance, 'cm')\n    time.sleep(1)\n",
+    "codeChallenge": "import machine\nimport time\n\ntrigger = machine.Pin(5, machine.Pin.OUT)\necho = machine.Pin(4, machine.Pin.IN)\n\nwhile True:\n    # TODO: Replace this block with the code to measure the distance using the ultrasonic sensor and print it\n    print('Distance is unknown')\n    time.sleep(1)\n"
+  }
+  

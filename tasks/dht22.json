@@ -1,0 +1,7 @@
+{
+    "title": "Challenge 4: DHT22",
+    "description": "Use the DHT22 sensor to read temperature and humidity values.",
+    "codeSolution": "import dht\nfrom machine import Pin\nimport time\n\ndht_sensor = dht.DHT22(Pin(5))\n\nwhile True:\n    dht_sensor.measure()\n    temperature = dht_sensor.temperature()\n    humidity = dht_sensor.humidity()\n\n    print('Temperature:', temperature, '°C')\n    print('Humidity:', humidity, '%')\n\n    time.sleep(1)\n",
+    "codeChallenge": "import dht\nfrom machine import Pin\nimport time\n\ndht_sensor = dht.DHT22(Pin(5))\n\nwhile True:\n    # TODO: Replace this line with the code to read the temperature and humidity values from the DHT22 sensor and print them\n    print('Temperature and humidity values are unknown')\n"
+  }
+  

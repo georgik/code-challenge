@@ -1,0 +1,7 @@
+{
+    "title": "Challenge 6: Servo",
+    "description": "Control a servo motor with PWM.",
+    "codeSolution": "from machine import Pin, PWM\nimport time\n\nservo = PWM(Pin(5))\nservo.freq(50)\n\nwhile True:\n    servo.duty(30)\n    time.sleep(1)\n    servo.duty(75)\n    time.sleep(1)\n",
+    "codeChallenge": "from machine import Pin, PWM\nimport time\n\nservo = PWM(Pin(5))\nservo.freq(50)\n\nwhile True:\n    # TODO: Replace this loop with the code to control the servo motor using PWM\n    pass\n"
+  }
+  

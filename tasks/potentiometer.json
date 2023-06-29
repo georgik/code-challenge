@@ -1,0 +1,7 @@
+{
+    "title": "Challenge 8: Potentiometer",
+    "description": "Read the value from a potentiometer.",
+    "codeSolution": "import machine\nimport time\n\nadc = machine.ADC(0)\n\nwhile True:\n    pot_value = adc.read()\n    print('Potentiometer value:', pot_value)\n    time.sleep(1)\n",
+    "codeChallenge": "import machine\nimport time\n\nadc = machine.ADC(0)\n\nwhile True:\n    # TODO: Replace this line with the code to read the value from the potentiometer and print it\n    print('Potentiometer value is unknown')\n    time.sleep(1)\n"
+  }
+  

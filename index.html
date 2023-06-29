@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Educational Game</title>
+    <style>
+        /* Add some basic styling to the page */
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding-top: 50px;
+        }
+        
+        /* Style the code solution area */
+        pre {
+            background-color: #f8f8f8;
+            padding: 10px;
+            border-radius: 5px;
+            white-space: pre-wrap;
+            text-align: left;
+            cursor: text;
+        }
+        
+        /* Change cursor to edit cursor when hovering over code solution area */
+        pre:hover {
+            cursor: text;
+        }
+    </style>
+</head>
+<body>
+    <h1>Education Game</h1>
+    <div id="challenge">
+        <p id="taskTitle"></p>
+        <p id="taskDescription"></p>
+        <pre contenteditable="true" id="codeSolution"></pre>
+        <button onclick="checkSolution()">Check Solution</button>
+        <button onclick="displaySolution()">Display Solution</button>
+        <p id="result"></p>
+        <div id="prompt" style="display: none;">
+            <p>Congratulations! You have successfully completed the level.</p>
+            <p>What would you like to do next?</p>
+            <button onclick="nextLevel()">Continue to Next Level</button>
+            <button onclick="restartLevel()">Restart Current Level</button>
+        </div>
+    </div>
+
+    <script>
+        // Define the level tasks in separate JSON files
+        const levelTasks = [
+            "led.json",
+            "pushbutton.json",
+            "lcd1602.json",
+            "dht22.json",
+            "buzzer.json",
+            "servo.json",
+            "ultrasonic.json",
+            "potentiometer.json",
+            "ssd1306.json",
+            "photoresistor.json"
+        ];
+
+
+        let currentLevel = 0;
+        let currentTask = null;
+
+        function loadTask() {
+            // Load the level task from the JSON file
+            const taskFile = levelTasks[currentLevel];
+            const taskURL = "./tasks/" + taskFile;
+
+            fetch(taskURL)
+                .then(response => response.json())
+                .then(task => {
+                    currentTask = task;
+                    displayTask();
+                })
+                .catch(error => {
+                    console.error("Failed to load task:", error);
+                });
+        }
+
+        function displayTask() {
+            // Update the task title and description
+            document.getElementById("taskTitle").textContent = currentTask.title;
+            document.getElementById("taskDescription").textContent = currentTask.description;
+
+            // Set the challenge code as the initial code solution
+            document.getElementById("codeSolution").textContent = currentTask.codeChallenge;
+
+            // Clear the result and prompt
+            document.getElementById("result").textContent = "";
+            document.getElementById("prompt").style.display = "none";
+        }
+
+        function checkSolution() {
+            // Retrieve the user's solution from the code editor
+            const userSolution = document.getElementById("codeSolution").textContent;
+            
+            // TODO: Implement the solution checking logic here
+            
+            // For demonstration purposes, let's assume the user's solution is correct
+            const isSolutionCorrect = true;
+            
+            // Provide feedback based on the correctness of the solution
+            if (isSolutionCorrect) {
+                document.getElementById("result").textContent = "Congratulations! Your solution is correct.";
+                document.getElementById("prompt").style.display = "block";
+            } else {
+                document.getElementById("result").textContent = "Oops! Your solution is incorrect. Please try again.";
+            }
+        }
+        
+        function displaySolution() {
+            // Set the code solution as the content of the code editor
+            document.getElementById("codeSolution").textContent = currentTask.codeSolution;
+        }
+        
+        function nextLevel() {
+            currentLevel++;
+            
+            if (currentLevel < levelTasks.length) {
+                loadTask();
+            } else {
+                // Handle game completion or redirect to a new page
+                alert("Congratulations! You have completed all the levels!");
+            }
+        }
+        
+        function restartLevel() {
+            displayTask();
+        }
+
+        // Load the initial level task
+        loadTask();
+    </script>
+</body>
+</html>

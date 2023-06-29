@@ -1,0 +1,7 @@
+{
+  "title": "Challenge 3: LCD1602",
+  "description": "Write the code to display a message on the LCD1602:",
+  "codeSolution": "import machine\nimport utime\nfrom machine import I2C\n\n# Initialize I2C communication\ni2c = I2C(scl=machine.Pin(5), sda=machine.Pin(4))  # Replace '5' and '4' with the appropriate GPIO pin numbers\n\n# Initialize the LCD1602\nlcd = machine.I2C_LCD1602(i2c)\n\nwhile True:\n    lcd.puts('Hello, LCD!')\n    utime.sleep(2)\n",
+  "codeChallenge": "import machine\nimport utime\nfrom machine import I2C\n\n# Initialize I2C communication\ni2c = I2C(scl=machine.Pin(5), sda=machine.Pin(4))  # Replace '5' and '4' with the appropriate GPIO pin numbers\n\n# Initialize the LCD1602\nlcd = machine.I2C_LCD1602(i2c)\n\nwhile True:\n    # TODO: Replace this line with the code to display 'Hello, LCD!' on the LCD\n    utime.sleep(2)\n"
+}
+

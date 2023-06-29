@@ -1,0 +1,7 @@
+{
+  "title": "Challenge 2: Pushbutton",
+  "description": "Write the code to detect the state of a pushbutton:",
+  "codeSolution": "import machine\n\nbutton_pin = machine.Pin(14, machine.Pin.IN)  # Replace '14' with the appropriate GPIO pin number\n\nwhile True:\n    button_state = button_pin.value()\n\n    if button_state:\n        print('Button is pressed')\n    else:\n        print('Button is not pressed')\n",
+  "codeChallenge": "import machine\n\nbutton_pin = machine.Pin(14, machine.Pin.IN)  # Replace '14' with the appropriate GPIO pin number\n\nwhile True:\n    # TODO: Replace this line with the code to check the state of the pushbutton and print an appropriate message\n    print('Button state is unknown')\n"
+}
+

@@ -1,0 +1,7 @@
+{
+    "title": "Challenge 9: SSD1306 Graphics Display",
+    "description": "Display text on an SSD1306 graphics display.",
+    "codeSolution": "import machine\nimport ssd1306\n\ni2c = machine.I2C(sda=machine.Pin(4), scl=machine.Pin(5))\ndisplay = ssd1306.SSD1306_I2C(128, 64, i2c)\n\ndisplay.fill(0)\ndisplay.text('Hello,', 0, 0)\ndisplay.text('MicroPython!', 0, 16)\ndisplay.show()\n",
+    "codeChallenge": "import machine\nimport ssd1306\n\ni2c = machine.I2C(sda=machine.Pin(4), scl=machine.Pin(5))\ndisplay = ssd1306.SSD1306_I2C(128, 64, i2c)\n\ndisplay.fill(0)\n# TODO: Replace these lines with the code to display your own text on the SSD1306 graphics display\ndisplay.text('Your text here', 0, 0)\ndisplay.show()\n"
+  }
+  
